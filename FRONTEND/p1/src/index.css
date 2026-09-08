@@ -1,0 +1,88 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,body,
+#root{
+  height: 100%;
+  width: 100%;
+}
+
+h1{
+  color: black;
+}
+
+.createPost{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background-color: lemonchiffon;
+  
+}
+
+.createPost form{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: lemonchiffon;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  padding: 20px;
+}
+
+.createPost input,
+.createPost textarea{
+  width: 300px;
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.createPost button{
+  padding: 5px 20px;
+  background-color: aqua;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.feed-section{
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  gap: 20px;
+  height: 100%;
+  width: 100%;
+  background-color: #f0f2f5;
+  padding: 20px;
+
+}
+
+.post-card{
+  background: wheat;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+
+}
+
+.post-card img{
+  max-width: 100%;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+.post-card h3{
+  margin-bottom: 10px;
+}
