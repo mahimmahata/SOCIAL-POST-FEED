@@ -26,7 +26,6 @@ app.post("/createPost", upload.single("image"), async (req,res) => {
 })
 
 //GET METHOD_____
-
 app.get("/getApi", async (req,res) => {
     const posts = await postModel.find();
 
@@ -35,5 +34,17 @@ app.get("/getApi", async (req,res) => {
         posts
     })
 })
+
+//DELETE METHOD__________
+app.delete("/DeletePost/:idx", async (req, res) => {
+    let idx = req.params.idx
+    await postModel.findByIdAndDelete(idx);
+    res.status(200).json({
+        message: "post deleted"
+
+    })
+})
+
+
 
 module.exports = app;

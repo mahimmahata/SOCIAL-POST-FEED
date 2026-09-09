@@ -18,6 +18,18 @@ const Feed = () => {
         })
     }, [])
 
+    const handelDelete = async (postId) => {
+        try{
+            await axios.delete(`http://localhost:100/DeletePost/${postId}`);
+            setPosts( (prevPosts) => 
+                prevPosts.filter((post) => post._id !== postId)
+            );
+        }catch(err){
+            console.log("Error",err);
+            
+        }
+    }
+
   return (
     <section className='feed-section'>
         {
@@ -25,6 +37,7 @@ const Feed = () => {
                 posts.map ( (post) => (
                     <div key={post._id} className='post-card'>
                         <img src={post.image} />
+                        <button onClick={ () => handelDelete(post._id)}>Delete</button>
                         <p>{post.caption}</p>
                     </div>
                 ))
