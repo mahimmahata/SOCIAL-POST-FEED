@@ -19,6 +19,8 @@ const Feed = () => {
     }, [])
 
     const handelDelete = async (postId) => {
+        const confirmDelete = window.confirm("want to delete the post ?")
+        if(!confirmDelete) return
         try{
             await axios.delete(`http://localhost:100/DeletePost/${postId}`);
             setPosts( (prevPosts) => 
